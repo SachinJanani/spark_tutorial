@@ -11,6 +11,7 @@ object wordcount_ds {
 
     val flatMapDF = text_file.flatMap(r => r.getString(0).split(" "))(Encoders.STRING)
     flatMapDF.groupBy("value").count().show()
+    Thread.sleep(20000)
   }
 
 }
